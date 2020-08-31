@@ -1,4 +1,4 @@
-angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider, $locationProvider) {
+angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider) {
 	
 	$routeProvider.when('/contatos', {
 		templateUrl: 'partials/contatos.html',
@@ -23,8 +23,8 @@ angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider
 
     $routeProvider.otherwise({redirectTo: '/contatos'});
 
-	$locationProvider.html5Mode({
-		enabled: true,
-		requireBase: false
-	});
+	// $locationProvider.html5Mode({
+	// 	enabled: true,
+	// 	requireBase: false
+	// });
 });
