@@ -1,4 +1,4 @@
-angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider) {
+angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider, $locationProvider) {
 	
 	$routeProvider.when('/contatos', {
 		templateUrl: 'partials/contatos.html',
@@ -6,7 +6,7 @@ angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider
 	});
 
 	$routeProvider.when('/contato/:contatoId', {
-    	templateUrl: 'partials/contato.html', 
+    	templateUrl: '../partials/contato.html', 
     	controller: 'ContatoController'
     });
 
@@ -16,15 +16,15 @@ angular.module('ifsp', ['ngRoute', 'ngResource']).config(function($routeProvider
 	});
 
 	$routeProvider.when('/curso/:cursoId', {
-    	templateUrl: 'partials/curso.html', 
+    	templateUrl: '../partials/curso.html', 
     	controller: 'CursoController'
     });   
 
 
     $routeProvider.otherwise({redirectTo: '/contatos'});
 
-	// $locationProvider.html5Mode({
-	// 	enabled: true,
-	// 	requireBase: false
-	// });
+	$locationProvider.html5Mode({
+		enabled: true,
+		requireBase: false
+	});
 });
